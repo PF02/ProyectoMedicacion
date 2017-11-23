@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonGuardarCambios = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,14 +49,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.TablaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonGuardarCambios
             // 
-            this.button1.Location = new System.Drawing.Point(258, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonGuardarCambios.Location = new System.Drawing.Point(332, 358);
+            this.buttonGuardarCambios.Name = "buttonGuardarCambios";
+            this.buttonGuardarCambios.Size = new System.Drawing.Size(121, 23);
+            this.buttonGuardarCambios.TabIndex = 23;
+            this.buttonGuardarCambios.Text = "Guardar Cambios";
+            this.buttonGuardarCambios.UseVisualStyleBackColor = true;
+            this.buttonGuardarCambios.Click += new System.EventHandler(this.buttonGuardarCambios_Click);
             // 
             // label5
             // 
@@ -71,7 +72,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(254, 316);
+            this.label4.Location = new System.Drawing.Point(328, 316);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 13);
             this.label4.TabIndex = 21;
@@ -81,7 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(254, 275);
+            this.label3.Location = new System.Drawing.Point(328, 275);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 20;
@@ -147,16 +148,18 @@
             // 
             // textConfirmacionCon
             // 
-            this.textConfirmacionCon.Location = new System.Drawing.Point(258, 332);
+            this.textConfirmacionCon.Location = new System.Drawing.Point(332, 332);
             this.textConfirmacionCon.Name = "textConfirmacionCon";
+            this.textConfirmacionCon.PasswordChar = '*';
             this.textConfirmacionCon.Size = new System.Drawing.Size(121, 20);
             this.textConfirmacionCon.TabIndex = 14;
             this.textConfirmacionCon.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textContrasena
             // 
-            this.textContrasena.Location = new System.Drawing.Point(257, 291);
+            this.textContrasena.Location = new System.Drawing.Point(331, 291);
             this.textContrasena.Name = "textContrasena";
+            this.textContrasena.PasswordChar = '*';
             this.textContrasena.Size = new System.Drawing.Size(121, 20);
             this.textContrasena.TabIndex = 13;
             this.textContrasena.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -165,6 +168,7 @@
             // 
             this.textNombreUsuario.Location = new System.Drawing.Point(127, 74);
             this.textNombreUsuario.Name = "textNombreUsuario";
+            this.textNombreUsuario.ReadOnly = true;
             this.textNombreUsuario.Size = new System.Drawing.Size(121, 20);
             this.textNombreUsuario.TabIndex = 12;
             // 
@@ -207,11 +211,14 @@
             this.ListPermisos.FormattingEnabled = true;
             this.ListPermisos.Items.AddRange(new object[] {
             "Módulo de Usuarios",
-            "Módulo de Personas",
-            "Módulo Medicamentos"});
+            "Módulo de Personas y Alergias",
+            "Módulo de Medicamentos y Composión",
+            "Módulo de Consulta Médica ",
+            "Módulo de Proveedores",
+            "Módulo de Compras"});
             this.ListPermisos.Location = new System.Drawing.Point(73, 275);
             this.ListPermisos.Name = "ListPermisos";
-            this.ListPermisos.Size = new System.Drawing.Size(174, 94);
+            this.ListPermisos.Size = new System.Drawing.Size(249, 109);
             this.ListPermisos.TabIndex = 29;
             // 
             // label8
@@ -234,7 +241,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textIdUsuario);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonGuardarCambios);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -260,7 +267,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonGuardarCambios;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

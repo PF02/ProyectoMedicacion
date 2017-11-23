@@ -24,8 +24,19 @@ namespace ProyectoMedicacion.Vistas
 
         public void LlenarCheckPermisos()
         {
-            bool ModuloUsuarios = Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Usuarios", textIdUsuario.Text);
+            bool ModuloUsuarios = Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Usuarios", textIdUsuario.Text);
 
+            bool ModuloPersonasAlergias= Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Personas y Alergias", textIdUsuario.Text);
+
+            bool ModuloMedicamentoComposicion = Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Medicamentos y Composión", textIdUsuario.Text);
+
+            bool ModuloConsultaMedica = Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Consulta Médica", textIdUsuario.Text);
+
+            bool ModuloProveedores = Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Proveedores", textIdUsuario.Text);
+
+            bool ModuloCompras= Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Compras", textIdUsuario.Text);
+
+            ////////////////////////////////////////////////////////////////////////
             if ( ModuloUsuarios == true)
             {
                 ListPermisos.SetItemChecked(0, true);
@@ -34,8 +45,51 @@ namespace ProyectoMedicacion.Vistas
             {
                 ListPermisos.SetItemChecked(0, false);
             }
-
-
+            /////////////////////////////////////////////////////////////////////
+            if (ModuloPersonasAlergias == true)
+            {
+                ListPermisos.SetItemChecked(1, true);
+            }
+            else
+            {
+                ListPermisos.SetItemChecked(1, false);
+            }
+            /////////////////////////////////////////////////////////////////////
+            if (ModuloMedicamentoComposicion == true)
+            {
+                ListPermisos.SetItemChecked(2, true);
+            }
+            else
+            {
+                ListPermisos.SetItemChecked(2, false);
+            }
+            /////////////////////////////////////////////////////////////////////
+            if (ModuloConsultaMedica == true)
+            {
+                ListPermisos.SetItemChecked(3, true);
+            }
+            else
+            {
+                ListPermisos.SetItemChecked(3, false);
+            }
+            /////////////////////////////////////////////////////////////////////
+            if (ModuloProveedores == true)
+            {
+                ListPermisos.SetItemChecked(4, true);
+            }
+            else
+            {
+                ListPermisos.SetItemChecked(4, false);
+            }
+            /////////////////////////////////////////////////////////////////////
+            if (ModuloCompras == true)
+            {
+                ListPermisos.SetItemChecked(5, true);
+            }
+            else
+            {
+                ListPermisos.SetItemChecked(5, false);
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -77,6 +131,20 @@ namespace ProyectoMedicacion.Vistas
             textIdUsuario.Text= TablaUsuarios.CurrentRow.Cells[4].Value.ToString();
             textIdPersona.Text = TablaUsuarios.CurrentRow.Cells[5].Value.ToString();
             LlenarCheckPermisos();
+        }
+
+        private void buttonGuardarCambios_Click(object sender, EventArgs e)
+        {
+            
+            if (textNombreEmpleado.Text == "" || textIdPersona.Text == "")
+            {
+                MessageBox.Show("Seleccione un empleado para modificar sus credenciales.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else if (textContrasena.Text != textConfirmacionCon.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

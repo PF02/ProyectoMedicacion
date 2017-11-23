@@ -21,7 +21,8 @@ namespace ProyectoMedicacion.Controles
             int a = Convert.ToInt32(Clases.Usuario.IdUsuario);
             try
             {
-               
+                Data_Persistance.Conexion.CerrarConexion();
+                Data_Persistance.Conexion.AbrirConexion();
                 //P.LPermisos.Clear();
                 P.LPermisos = new List<string>();
                 SqlCommand comm = new SqlCommand("SELECT permiso.Nombre_Permiso FROM Permiso JOIN Permiso_Usuario ON Permiso_Usuario.Id_Permiso = Permiso.Id_Permiso WHERE Permiso_Usuario.Id_Usuario ='"+a+"';", Data_Persistance.Conexion.conn);

@@ -47,8 +47,8 @@ namespace ProyectoMedicacion.Controles
                new List<System.Data.SqlClient.SqlParameter>(){
                new System.Data.SqlClient.SqlParameter("@NombreU",nom),
                new System.Data.SqlClient.SqlParameter("@ContrasenaU",pass),
-               new System.Data.SqlClient.SqlParameter("EstadoU",sta),
-               new System.Data.SqlClient.SqlParameter("IdP",idp)
+               new System.Data.SqlClient.SqlParameter("@EstadoU",sta),
+               new System.Data.SqlClient.SqlParameter("@IdP",idp)
 
           });
             }
@@ -57,6 +57,27 @@ namespace ProyectoMedicacion.Controles
                 throw sqlex;
             }
         }
+
+        public static void ActualizarUsuarioyContrasena(string idu, string Nomu, string pass, string esta, string idp)
+        {
+            try
+            {
+                ProyectoMedicacion.Data_Persistance.Conexion.ejecutaProcedure("AgregarUsuario",
+               new List<System.Data.SqlClient.SqlParameter>(){
+               new System.Data.SqlClient.SqlParameter("@Id_U",idu),
+               new System.Data.SqlClient.SqlParameter("@NombreU",Nomu),
+               new System.Data.SqlClient.SqlParameter("@ContrasenaU",pass),
+               new System.Data.SqlClient.SqlParameter("EstadoU",esta),
+               new System.Data.SqlClient.SqlParameter("@IdP",idp)
+
+          });
+            }
+            catch (System.Data.SqlClient.SqlException sqlex)
+            {
+                throw sqlex;
+            }
+        }
+
 
 
 

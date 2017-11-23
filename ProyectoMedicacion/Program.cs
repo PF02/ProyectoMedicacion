@@ -16,11 +16,11 @@ namespace ProyectoMedicacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProyectoMedicacion.Vistas.AgregarUsuario());
-            Application.Run(new ProyectoMedicacion.Vistas.GestionUsuarios());
-            Application.Run(new Login());
-           
-            // Application.Run(new ProyectoMedicacion.Vistas.Home());
+           // Application.Run(new ProyectoMedicacion.Vistas.AgregarUsuario());
+            
+            //Application.Run(new Login());
+           Application.Run(new ProyectoMedicacion.Vistas.GestionUsuarios());
+            //Application.Run(new ProyectoMedicacion.Vistas.Home());
         }
     }
 }

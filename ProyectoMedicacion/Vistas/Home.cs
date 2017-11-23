@@ -27,10 +27,35 @@ namespace ProyectoMedicacion.Vistas
             int totalpermisos = Controles.ControlPermiso.PermisosUsuario.Count();
             for (int i = 0; i < totalpermisos; i++)
             {
-                if (Controles.ControlPermiso.PermisosUsuario[i] == "Usuarios")
+                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Usuarios")
                 {
-                 buttonUsuarios.Enabled = true;
+                    panelUsuarios.Enabled = true;
                 }
+
+                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Personas y Alergias")
+                {
+                    panelPersonasAlergias.Enabled = true;
+                }
+
+                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Medicamentos y Composión")
+                {
+                    panelMedicamentosComposicion.Enabled = true;
+                }
+
+                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Consulta Médica")
+                {
+                    panelConsultaMedica.Enabled = true;
+                }
+
+                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Proveedores")
+                {
+                    panelProveedores.Enabled = true;
+                }
+                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Compras")
+                {
+                    panelCompras.Enabled = true;
+                }
+
             }
 
         }
