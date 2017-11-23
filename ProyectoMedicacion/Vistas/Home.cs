@@ -68,5 +68,25 @@ namespace ProyectoMedicacion.Vistas
            DesbloquearModulos();
 
         }
+
+        private void buttonUsuarios_Click(object sender, EventArgs e)
+        {
+            Vistas.AgregarUsuario au = new Vistas.AgregarUsuario();
+            au.ShowDialog();
+            
+        }
+
+        private void Home_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Login lg = new Login();
+            lg.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Vistas.GestionUsuarios gu = new Vistas.GestionUsuarios();
+            gu.ShowDialog();
+
+        }
     }
 }

@@ -116,6 +116,7 @@
             this.buttonUsuarios.TabIndex = 2;
             this.buttonUsuarios.Text = "Agregar Usuarios";
             this.buttonUsuarios.UseVisualStyleBackColor = true;
+            this.buttonUsuarios.Click += new System.EventHandler(this.buttonUsuarios_Click);
             // 
             // button3
             // 
@@ -125,6 +126,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Gestión de Usuarios y Permisos";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panelPersonasAlergias
             // 
@@ -446,6 +448,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Home_FormClosed);
             this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
