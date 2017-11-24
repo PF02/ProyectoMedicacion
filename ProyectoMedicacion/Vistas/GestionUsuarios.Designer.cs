@@ -289,6 +289,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Usuarios";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionUsuarios_FormClosed);
             this.Load += new System.EventHandler(this.GestionUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TablaUsuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);

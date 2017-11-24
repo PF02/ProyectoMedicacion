@@ -36,6 +36,8 @@ namespace ProyectoMedicacion.Vistas
 
             bool ModuloCompras= Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Compras", textIdUsuario.Text);
 
+            bool ModuloInventario = Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Inventario", textIdUsuario.Text);
+
             ////////////////////////////////////////////////////////////////////////
             if ( ModuloUsuarios == true)
             {
@@ -89,6 +91,14 @@ namespace ProyectoMedicacion.Vistas
             else
             {
                 ListPermisos.SetItemChecked(5, false);
+            }
+            if (ModuloInventario== true)
+            {
+                ListPermisos.SetItemChecked(6, true);
+            }
+            else
+            {
+                ListPermisos.SetItemChecked(6, false);
             }
         }
 
@@ -226,6 +236,12 @@ namespace ProyectoMedicacion.Vistas
                 textContrasena.Enabled = true;
                 textConfirmacionCon.Enabled = true;
             }
+        }
+
+        private void GestionUsuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Vistas.Home h = new Home();
+            h.Refresh();
         }
     }
 }
