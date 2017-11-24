@@ -32,9 +32,9 @@ namespace ProyectoMedicacion.Vistas
                     panelUsuarios.Enabled = true;
                 }
 
-                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Personas y Alergias")
+                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Personas")
                 {
-                    panelPersonasAlergias.Enabled = true;
+                    panelPersonas.Enabled = true;
                 }
 
                 if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Medicamentos y Composión")
@@ -56,6 +56,12 @@ namespace ProyectoMedicacion.Vistas
                     panelCompras.Enabled = true;
                 }
 
+                if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Inventario")
+                {
+                    panelInventario.Enabled = true;
+                }
+
+
             }
 
         }
@@ -66,7 +72,7 @@ namespace ProyectoMedicacion.Vistas
            Controles.ControlPermiso cp = new Controles.ControlPermiso();
            cp.CargarPermisosUsuario();
            DesbloquearModulos();
-
+           
         }
 
         private void buttonUsuarios_Click(object sender, EventArgs e)

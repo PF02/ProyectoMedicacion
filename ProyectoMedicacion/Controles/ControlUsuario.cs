@@ -62,7 +62,7 @@ namespace ProyectoMedicacion.Controles
         {
             try
             {
-                ProyectoMedicacion.Data_Persistance.Conexion.ejecutaProcedure("AgregarUsuario",
+                ProyectoMedicacion.Data_Persistance.Conexion.ejecutaProcedure("ActualizarUsuario",
                new List<System.Data.SqlClient.SqlParameter>(){
                new System.Data.SqlClient.SqlParameter("@Id_U",idu),
                new System.Data.SqlClient.SqlParameter("@NombreU",Nomu),
@@ -78,7 +78,24 @@ namespace ProyectoMedicacion.Controles
             }
         }
 
+        public static void ActualizarUsuarioSinContrasena(string idu, string Nomu, string esta, string idp)
+        {
+            try
+            {
+                ProyectoMedicacion.Data_Persistance.Conexion.ejecutaProcedure("ActualizarUsuarioSinContrasena",
+               new List<System.Data.SqlClient.SqlParameter>(){
+               new System.Data.SqlClient.SqlParameter("@Id_U",idu),
+               new System.Data.SqlClient.SqlParameter("@NombreU",Nomu),
+               new System.Data.SqlClient.SqlParameter("EstadoU",esta),
+               new System.Data.SqlClient.SqlParameter("@IdP",idp)
 
+          });
+            }
+            catch (System.Data.SqlClient.SqlException sqlex)
+            {
+                throw sqlex;
+            }
+        }
 
 
 

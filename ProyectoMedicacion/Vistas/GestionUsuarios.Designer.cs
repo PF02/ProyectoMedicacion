@@ -31,7 +31,6 @@
             this.buttonGuardarCambios = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TablaUsuarios = new System.Windows.Forms.DataGridView();
@@ -46,12 +45,16 @@
             this.textNombreEmpleado = new System.Windows.Forms.TextBox();
             this.ListPermisos = new System.Windows.Forms.CheckedListBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.radioButtonSI = new System.Windows.Forms.RadioButton();
+            this.radioButtonNO = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.TablaUsuarios)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonGuardarCambios
             // 
-            this.buttonGuardarCambios.Location = new System.Drawing.Point(332, 358);
+            this.buttonGuardarCambios.Location = new System.Drawing.Point(356, 390);
             this.buttonGuardarCambios.Name = "buttonGuardarCambios";
             this.buttonGuardarCambios.Size = new System.Drawing.Size(121, 23);
             this.buttonGuardarCambios.TabIndex = 23;
@@ -72,22 +75,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(328, 316);
+            this.label4.Location = new System.Drawing.Point(12, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 13);
             this.label4.TabIndex = 21;
             this.label4.Text = "Confirmación Contraseña";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(328, 275);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Contraseña";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -148,19 +141,21 @@
             // 
             // textConfirmacionCon
             // 
-            this.textConfirmacionCon.Location = new System.Drawing.Point(332, 332);
+            this.textConfirmacionCon.Enabled = false;
+            this.textConfirmacionCon.Location = new System.Drawing.Point(15, 83);
             this.textConfirmacionCon.Name = "textConfirmacionCon";
             this.textConfirmacionCon.PasswordChar = '*';
-            this.textConfirmacionCon.Size = new System.Drawing.Size(121, 20);
+            this.textConfirmacionCon.Size = new System.Drawing.Size(142, 20);
             this.textConfirmacionCon.TabIndex = 14;
             this.textConfirmacionCon.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textContrasena
             // 
-            this.textContrasena.Location = new System.Drawing.Point(331, 291);
+            this.textContrasena.Enabled = false;
+            this.textContrasena.Location = new System.Drawing.Point(15, 37);
             this.textContrasena.Name = "textContrasena";
             this.textContrasena.PasswordChar = '*';
-            this.textContrasena.Size = new System.Drawing.Size(121, 20);
+            this.textContrasena.Size = new System.Drawing.Size(143, 20);
             this.textContrasena.TabIndex = 13;
             this.textContrasena.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -211,11 +206,12 @@
             this.ListPermisos.FormattingEnabled = true;
             this.ListPermisos.Items.AddRange(new object[] {
             "Módulo de Usuarios",
-            "Módulo de Personas y Alergias",
+            "Módulo de Personas",
             "Módulo de Medicamentos y Composión",
             "Módulo de Consulta Médica ",
             "Módulo de Proveedores",
-            "Módulo de Compras"});
+            "Módulo de Compras",
+            "Módulo de Inventario"});
             this.ListPermisos.Location = new System.Drawing.Point(73, 275);
             this.ListPermisos.Name = "ListPermisos";
             this.ListPermisos.Size = new System.Drawing.Size(249, 109);
@@ -230,11 +226,50 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Permisos";
             // 
+            // radioButtonSI
+            // 
+            this.radioButtonSI.AutoSize = true;
+            this.radioButtonSI.Location = new System.Drawing.Point(21, 17);
+            this.radioButtonSI.Name = "radioButtonSI";
+            this.radioButtonSI.Size = new System.Drawing.Size(35, 17);
+            this.radioButtonSI.TabIndex = 32;
+            this.radioButtonSI.Text = "SI";
+            this.radioButtonSI.UseVisualStyleBackColor = true;
+            this.radioButtonSI.CheckedChanged += new System.EventHandler(this.radioButtonSI_CheckedChanged);
+            // 
+            // radioButtonNO
+            // 
+            this.radioButtonNO.AutoSize = true;
+            this.radioButtonNO.Checked = true;
+            this.radioButtonNO.Location = new System.Drawing.Point(80, 17);
+            this.radioButtonNO.Name = "radioButtonNO";
+            this.radioButtonNO.Size = new System.Drawing.Size(41, 17);
+            this.radioButtonNO.TabIndex = 33;
+            this.radioButtonNO.TabStop = true;
+            this.radioButtonNO.Text = "NO";
+            this.radioButtonNO.UseVisualStyleBackColor = true;
+            this.radioButtonNO.CheckedChanged += new System.EventHandler(this.radioButtonNO_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textConfirmacionCon);
+            this.groupBox1.Controls.Add(this.radioButtonNO);
+            this.groupBox1.Controls.Add(this.textContrasena);
+            this.groupBox1.Controls.Add(this.radioButtonSI);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(328, 275);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(173, 109);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "¿Actualizar Contraseña?";
+            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 414);
+            this.ClientSize = new System.Drawing.Size(518, 414);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.ListPermisos);
             this.Controls.Add(this.textNombreEmpleado);
@@ -243,15 +278,11 @@
             this.Controls.Add(this.textIdUsuario);
             this.Controls.Add(this.buttonGuardarCambios);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TablaUsuarios);
             this.Controls.Add(this.textIdPersona);
             this.Controls.Add(this.textEstadoUsuario);
-            this.Controls.Add(this.textConfirmacionCon);
-            this.Controls.Add(this.textContrasena);
             this.Controls.Add(this.textNombreUsuario);
             this.MaximizeBox = false;
             this.Name = "GestionUsuarios";
@@ -260,6 +291,8 @@
             this.Text = "Gestion de Usuarios";
             this.Load += new System.EventHandler(this.GestionUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TablaUsuarios)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +303,6 @@
         private System.Windows.Forms.Button buttonGuardarCambios;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView TablaUsuarios;
@@ -285,5 +317,8 @@
         private System.Windows.Forms.TextBox textNombreEmpleado;
         private System.Windows.Forms.CheckedListBox ListPermisos;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton radioButtonSI;
+        private System.Windows.Forms.RadioButton radioButtonNO;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

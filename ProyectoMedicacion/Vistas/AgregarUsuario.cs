@@ -65,6 +65,7 @@ namespace ProyectoMedicacion.Vistas
 
                 else
                 {
+                ProyectoMedicacion.Data_Persistance.Conexion.AbrirConexion();
                 Controles.ControlUsuario.AgregarUsuario(textNombreUsuario.Text, textContrasena.Text,TextEstadoUsuario.Text, textIdPersona.Text);
 
                 MessageBox.Show("Usuario Creado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -26,7 +26,7 @@ namespace ProyectoMedicacion.Vistas
         {
             bool ModuloUsuarios = Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Usuarios", textIdUsuario.Text);
 
-            bool ModuloPersonasAlergias= Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Personas y Alergias", textIdUsuario.Text);
+            bool ModuloPersonas= Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Personas", textIdUsuario.Text);
 
             bool ModuloMedicamentoComposicion = Controles.ControlPermiso.ComprobarPermisosUsuario(textNombreUsuario.Text, "Módulo de Medicamentos y Composión", textIdUsuario.Text);
 
@@ -46,7 +46,7 @@ namespace ProyectoMedicacion.Vistas
                 ListPermisos.SetItemChecked(0, false);
             }
             /////////////////////////////////////////////////////////////////////
-            if (ModuloPersonasAlergias == true)
+            if (ModuloPersonas == true)
             {
                 ListPermisos.SetItemChecked(1, true);
             }
@@ -133,9 +133,28 @@ namespace ProyectoMedicacion.Vistas
             LlenarCheckPermisos();
         }
 
+        public void ActualizarPermisos()
+        {
+            Controles.ControlPermiso.ActualizarPermisosEnBase(ListPermisos, textIdUsuario.Text);
+            LlenarCheckPermisos();
+        }
+        public void LimpiarCampos()
+        {
+            textIdPersona.Clear();
+            textIdUsuario.Clear();
+            textNombreEmpleado.Clear();
+            textNombreUsuario.Clear();
+            textContrasena.Clear();
+            textConfirmacionCon.Clear();
+            radioButtonNO.Checked = true;
+            for (int i = 0; i < ListPermisos.Items.Count; i++)
+            {
+                ListPermisos.SetItemChecked(i, false);
+            }
+        }
         private void buttonGuardarCambios_Click(object sender, EventArgs e)
         {
-            
+            ////////////////VALIDACIONES////////////////////////
             if (textNombreEmpleado.Text == "" || textIdPersona.Text == "")
             {
                 MessageBox.Show("Seleccione un empleado para modificar sus credenciales.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -144,6 +163,68 @@ namespace ProyectoMedicacion.Vistas
             else if (textContrasena.Text != textConfirmacionCon.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            //////////////////////PROCESO DE ACTUALIZAR EL USUARIO//////////////////////////
+            else if (radioButtonNO.Checked == true && radioButtonSI.Checked == false)
+            {
+                ///SE ACTUALIZA EL USUARIO SIN CONTRASENA
+                ProyectoMedicacion.Data_Persistance.Conexion.AbrirConexion();
+
+                Controles.ControlUsuario.ActualizarUsuarioSinContrasena(textIdUsuario.Text, textNombreUsuario.Text, textEstadoUsuario.Text, textIdPersona.Text);
+
+                MessageBox.Show("Usuario Actualizado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ProyectoMedicacion.Controles.ControlUsuario.LlenarTablaUsuariosEnGestionUsuario(TablaUsuarios);
+                ActualizarPermisos();
+                LimpiarCampos();
+                ProyectoMedicacion.Data_Persistance.Conexion.CerrarConexion();
+            }
+            else if (radioButtonNO.Checked == false && radioButtonSI.Checked == true)
+            {
+                //SE ACTUALIZA EL USUARIO CON CONTRASENA
+                ProyectoMedicacion.Data_Persistance.Conexion.AbrirConexion();
+
+                Controles.ControlUsuario.ActualizarUsuarioyContrasena(textIdUsuario.Text, textNombreUsuario.Text, textContrasena.Text, textEstadoUsuario.Text, textIdPersona.Text);
+
+                MessageBox.Show("Usuario Actualizado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ProyectoMedicacion.Controles.ControlUsuario.LlenarTablaUsuariosEnGestionUsuario(TablaUsuarios);
+                ActualizarPermisos();
+                LimpiarCampos();
+
+                ProyectoMedicacion.Data_Persistance.Conexion.CerrarConexion();
+            }
+            
+
+        }
+
+        private void radioButtonSI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonSI.Checked == true)
+            {
+                textContrasena.Enabled = true;
+                textConfirmacionCon.Enabled = true;
+            }
+            else
+            {
+                textContrasena.Enabled = false;
+                textConfirmacionCon.Enabled = false;
+            }
+        }
+
+        private void radioButtonNO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonNO.Checked == true)
+            {
+                textContrasena.Enabled = false;
+                textConfirmacionCon.Enabled = false;
+                
+            }
+            else
+            {
+                textContrasena.Enabled = true;
+                textConfirmacionCon.Enabled = true;
             }
         }
     }
