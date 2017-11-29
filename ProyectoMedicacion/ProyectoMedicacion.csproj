@@ -66,11 +66,23 @@
     <Compile Include="Controles\ControlPersona.cs" />
     <Compile Include="Controles\ControlUsuario.cs" />
     <Compile Include="Data Persistance\Conexion.cs" />
+    <Compile Include="Vistas\AgregarPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AgregarPersonas.Designer.cs">
+      <DependentUpon>AgregarPersonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\AgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\GestionPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\GestionPersonas.Designer.cs">
+      <DependentUpon>GestionPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\GestionUsuarios.cs">
       <SubType>Form</SubType>
@@ -92,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vistas\AgregarPersonas.resx">
+      <DependentUpon>AgregarPersonas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>

@@ -48,13 +48,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelProveedores = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panelCompras = new System.Windows.Forms.Panel();
-            this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,6 +61,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
             this.panelPersonas.SuspendLayout();
@@ -150,6 +148,7 @@
             this.button5.TabIndex = 2;
             this.button5.Text = "Agregar Personas";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -159,6 +158,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Gestión Personas";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label2
             // 
@@ -183,6 +183,7 @@
             // panelMedicamentosComposicion
             // 
             this.panelMedicamentosComposicion.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panelMedicamentosComposicion.Controls.Add(this.button1);
             this.panelMedicamentosComposicion.Controls.Add(this.button6);
             this.panelMedicamentosComposicion.Enabled = false;
             this.panelMedicamentosComposicion.Location = new System.Drawing.Point(356, 442);
@@ -196,7 +197,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(127, 73);
             this.button6.TabIndex = 3;
-            this.button6.Text = "Medicamentos";
+            this.button6.Text = "Agregar Medicamento";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -271,8 +272,6 @@
             // panelProveedores
             // 
             this.panelProveedores.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panelProveedores.Controls.Add(this.button12);
-            this.panelProveedores.Controls.Add(this.button13);
             this.panelProveedores.Controls.Add(this.button14);
             this.panelProveedores.Enabled = false;
             this.panelProveedores.Location = new System.Drawing.Point(799, 442);
@@ -280,31 +279,13 @@
             this.panelProveedores.Size = new System.Drawing.Size(187, 309);
             this.panelProveedores.TabIndex = 9;
             // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(27, 167);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(127, 73);
-            this.button12.TabIndex = 3;
-            this.button12.Text = "Medicamentos";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(27, 88);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(127, 73);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "Personas";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
             // button14
             // 
             this.button14.Location = new System.Drawing.Point(27, 9);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(127, 73);
             this.button14.TabIndex = 2;
-            this.button14.Text = "Módulo de Usuarios";
+            this.button14.Text = "Gestión Proveedores";
             this.button14.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -330,7 +311,6 @@
             // panelCompras
             // 
             this.panelCompras.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panelCompras.Controls.Add(this.button15);
             this.panelCompras.Controls.Add(this.button16);
             this.panelCompras.Controls.Add(this.button17);
             this.panelCompras.Enabled = false;
@@ -339,22 +319,13 @@
             this.panelCompras.Size = new System.Drawing.Size(187, 309);
             this.panelCompras.TabIndex = 11;
             // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(27, 167);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(127, 73);
-            this.button15.TabIndex = 3;
-            this.button15.Text = "Medicamentos";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
             // button16
             // 
             this.button16.Location = new System.Drawing.Point(27, 88);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(127, 73);
             this.button16.TabIndex = 4;
-            this.button16.Text = "Personas";
+            this.button16.Text = "Gestión Compras";
             this.button16.UseVisualStyleBackColor = true;
             // 
             // button17
@@ -432,6 +403,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1374, 11);
             this.panel2.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(59, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 73);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Gestión Medicamento";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
@@ -517,13 +497,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panelProveedores;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panelCompras;
-        private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Label label6;
@@ -533,5 +510,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
     }
 }

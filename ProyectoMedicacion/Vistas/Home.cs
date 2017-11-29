@@ -144,5 +144,19 @@ namespace ProyectoMedicacion.Vistas
         {
             
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Vistas.AgregarPersonas ap = new AgregarPersonas();
+           // this.Hide();
+            ap.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            Vistas.GestionPersonas gp = new GestionPersonas();
+            gp.ShowDialog();
+        }
     }
 }
