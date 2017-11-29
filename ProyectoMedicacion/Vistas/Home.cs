@@ -23,49 +23,66 @@ namespace ProyectoMedicacion.Vistas
         }
         public void DesbloquearModulos()
         {
+            panelUsuarios.Enabled = false;
+            panelPersonas.Enabled = false;
+            panelMedicamentosComposicion.Enabled = false;
+            panelConsultaMedica.Enabled = false;
+            panelProveedores.Enabled = false;
+            panelCompras.Enabled = false;
+            panelInventario.Enabled = false;
+
+
             //string Modulo = Controles.ControlPermiso.PermisosUsuario[0].ToString();
             int totalpermisos = Controles.ControlPermiso.PermisosUsuario.Count();
             for (int i = 0; i < totalpermisos; i++)
             {
+                /////modulo usuarios
                 if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Usuarios")
                 {
                     panelUsuarios.Enabled = true;
                 }
+             
 
                 if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Personas")
                 {
                     panelPersonas.Enabled = true;
                 }
+              
+                //modulo medicamentos y composicion
 
                 if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Medicamentos y Composión")
                 {
                     panelMedicamentosComposicion.Enabled = true;
                 }
-
+                
                 if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Consulta Médica")
                 {
                     panelConsultaMedica.Enabled = true;
                 }
-
+                
+                //proveedores
                 if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Proveedores")
                 {
                     panelProveedores.Enabled = true;
                 }
+                
                 if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Compras")
                 {
                     panelCompras.Enabled = true;
                 }
-
+                
+                ///modulo de inventario
                 if (Controles.ControlPermiso.PermisosUsuario[i] == "Módulo de Inventario")
                 {
                     panelInventario.Enabled = true;
                 }
 
-
-            }
+                
+              }
 
         }
 
+       
 
         private void Home_Load(object sender, EventArgs e)
         {
@@ -90,9 +107,42 @@ namespace ProyectoMedicacion.Vistas
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             Vistas.GestionUsuarios gu = new Vistas.GestionUsuarios();
             gu.ShowDialog();
+            gu.Activate();
 
+        }
+
+        private void Home_Activated(object sender, EventArgs e)
+        {
+            Controles.ControlPermiso cp = new Controles.ControlPermiso();
+
+            cp.CargarPermisosUsuario();
+
+            DesbloquearModulos();
+
+        }
+
+        private void Home_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Home_MouseHover(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void Home_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Home_MouseMove(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

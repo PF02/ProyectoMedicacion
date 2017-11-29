@@ -31,11 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelUsuarios = new System.Windows.Forms.Panel();
-            this.buttonUsuarios = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.buttonUsuarios = new System.Windows.Forms.Button();
             this.panelPersonas = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelP = new System.Windows.Forms.Panel();
             this.panelMedicamentosComposicion = new System.Windows.Forms.Panel();
@@ -111,16 +111,6 @@
             this.panelUsuarios.Size = new System.Drawing.Size(181, 309);
             this.panelUsuarios.TabIndex = 1;
             // 
-            // buttonUsuarios
-            // 
-            this.buttonUsuarios.Location = new System.Drawing.Point(27, 13);
-            this.buttonUsuarios.Name = "buttonUsuarios";
-            this.buttonUsuarios.Size = new System.Drawing.Size(127, 73);
-            this.buttonUsuarios.TabIndex = 2;
-            this.buttonUsuarios.Text = "Agregar Usuarios";
-            this.buttonUsuarios.UseVisualStyleBackColor = true;
-            this.buttonUsuarios.Click += new System.EventHandler(this.buttonUsuarios_Click);
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(27, 92);
@@ -130,6 +120,16 @@
             this.button3.Text = "Gestión de Usuarios y Permisos";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // buttonUsuarios
+            // 
+            this.buttonUsuarios.Location = new System.Drawing.Point(27, 13);
+            this.buttonUsuarios.Name = "buttonUsuarios";
+            this.buttonUsuarios.Size = new System.Drawing.Size(127, 73);
+            this.buttonUsuarios.TabIndex = 2;
+            this.buttonUsuarios.Text = "Agregar Usuarios";
+            this.buttonUsuarios.UseVisualStyleBackColor = true;
+            this.buttonUsuarios.Click += new System.EventHandler(this.buttonUsuarios_Click);
             // 
             // panelPersonas
             // 
@@ -142,15 +142,6 @@
             this.panelPersonas.Size = new System.Drawing.Size(165, 309);
             this.panelPersonas.TabIndex = 3;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(21, 88);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 73);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Gestión Personas";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(21, 9);
@@ -159,6 +150,15 @@
             this.button5.TabIndex = 2;
             this.button5.Text = "Agregar Personas";
             this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(21, 88);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(127, 73);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Gestión Personas";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -439,7 +439,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panel4);
@@ -463,8 +463,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.Home_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Home_FormClosed);
             this.Load += new System.EventHandler(this.Home_Load);
+            this.Enter += new System.EventHandler(this.Home_Enter);
+            this.MouseEnter += new System.EventHandler(this.Home_MouseEnter);
+            this.MouseHover += new System.EventHandler(this.Home_MouseHover);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Home_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelUsuarios.ResumeLayout(false);

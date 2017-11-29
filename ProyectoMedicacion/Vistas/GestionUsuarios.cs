@@ -241,7 +241,7 @@ namespace ProyectoMedicacion.Vistas
         private void GestionUsuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
             Vistas.Home h = new Home();
-            h.Refresh();
+            h.Activate();
         }
     }
 }
