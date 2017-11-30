@@ -9,6 +9,7 @@ namespace ProyectoMedicacion.Clases
     class Medicamento
     {
         public static int IdMedicamento { get; set; }
+
         public static string Nombre { get; set; }
         public static DateTime FechaExpiracion {get; set;}
         public static string Indicacion{ get; set;}
