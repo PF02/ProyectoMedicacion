@@ -8,7 +8,7 @@ namespace ProyectoMedicacion.Clases
 {
     class Medicamento
     {
-        //adasdasd
+        
         public static int IdMedicamento { get; set; }
         public static string Nombre { get; set; }
         public static DateTime FechaExpiracion {get; set;}
