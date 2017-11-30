@@ -42,11 +42,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.IdComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Componente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.botonGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -209,6 +209,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(262, 122);
             this.dataGridView1.TabIndex = 0;
             // 
+            // IdComponente
+            // 
+            this.IdComponente.HeaderText = "Id";
+            this.IdComponente.Name = "IdComponente";
+            this.IdComponente.ReadOnly = true;
+            this.IdComponente.Width = 50;
+            // 
+            // Componente
+            // 
+            this.Componente.HeaderText = "Componente";
+            this.Componente.Name = "Componente";
+            this.Componente.ReadOnly = true;
+            this.Componente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Componente.Width = 200;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.checkedListBox1);
@@ -235,43 +250,30 @@
             "Fiebre",
             "Ganas de Orinar",
             "Tos",
-            "Picor"});
+            "Picor",
+            "Mareos"});
             this.checkedListBox1.Location = new System.Drawing.Point(15, 25);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(262, 124);
             this.checkedListBox1.TabIndex = 0;
             // 
-            // button2
+            // botonGuardar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(663, 407);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 53);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // IdComponente
-            // 
-            this.IdComponente.HeaderText = "Id";
-            this.IdComponente.Name = "IdComponente";
-            this.IdComponente.ReadOnly = true;
-            this.IdComponente.Width = 50;
-            // 
-            // Componente
-            // 
-            this.Componente.HeaderText = "Componente";
-            this.Componente.Name = "Componente";
-            this.Componente.ReadOnly = true;
-            this.Componente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Componente.Width = 200;
+            this.botonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonGuardar.Location = new System.Drawing.Point(663, 407);
+            this.botonGuardar.Name = "botonGuardar";
+            this.botonGuardar.Size = new System.Drawing.Size(90, 53);
+            this.botonGuardar.TabIndex = 13;
+            this.botonGuardar.Text = "Guardar";
+            this.botonGuardar.UseVisualStyleBackColor = true;
+            this.botonGuardar.Click += new System.EventHandler(this.botonGuardar_Click);
             // 
             // AgregarMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 476);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.botonGuardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -309,7 +311,7 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button botonGuardar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdComponente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Componente;
     }
