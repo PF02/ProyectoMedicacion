@@ -60,12 +60,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Medicamento.cs" />
     <Compile Include="Clases\Persona.cs" />
+    <Compile Include="Clases\Sintoma.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controles\ControlMedicamento.cs" />
     <Compile Include="Controles\ControlPermiso.cs" />
     <Compile Include="Controles\ControlPersona.cs" />
     <Compile Include="Controles\ControlUsuario.cs" />
     <Compile Include="Data Persistance\Conexion.cs" />
+    <Compile Include="Vistas\AgregarMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AgregarMedicamento.Designer.cs">
+      <DependentUpon>AgregarMedicamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\AgregarPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vistas\AgregarMedicamento.resx">
+      <DependentUpon>AgregarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AgregarPersonas.resx">
       <DependentUpon>AgregarPersonas.cs</DependentUpon>
     </EmbeddedResource>

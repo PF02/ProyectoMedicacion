@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelP = new System.Windows.Forms.Panel();
             this.panelMedicamentosComposicion = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -61,7 +62,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
             this.panelPersonas.SuspendLayout();
@@ -183,6 +184,7 @@
             // panelMedicamentosComposicion
             // 
             this.panelMedicamentosComposicion.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panelMedicamentosComposicion.Controls.Add(this.button2);
             this.panelMedicamentosComposicion.Controls.Add(this.button1);
             this.panelMedicamentosComposicion.Controls.Add(this.button6);
             this.panelMedicamentosComposicion.Enabled = false;
@@ -191,14 +193,24 @@
             this.panelMedicamentosComposicion.Size = new System.Drawing.Size(244, 309);
             this.panelMedicamentosComposicion.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(54, 92);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 73);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Gestión Medicamento";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(60, 13);
+            this.button6.Location = new System.Drawing.Point(54, 13);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(127, 73);
             this.button6.TabIndex = 3;
             this.button6.Text = "Agregar Medicamento";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label3
             // 
@@ -404,14 +416,14 @@
             this.panel2.Size = new System.Drawing.Size(1374, 11);
             this.panel2.TabIndex = 3;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(59, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 73);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Gestión Medicamento";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(54, 171);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(127, 73);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Componentes";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
@@ -511,5 +523,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

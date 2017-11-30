@@ -158,5 +158,11 @@ namespace ProyectoMedicacion.Vistas
             Vistas.GestionPersonas gp = new GestionPersonas();
             gp.ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Vistas.AgregarMedicamento am = new AgregarMedicamento();
+            am.ShowDialog();
+        }
     }
 }
