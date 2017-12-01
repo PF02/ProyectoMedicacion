@@ -116,6 +116,7 @@
             this.TablaUsuarios.ShowEditingIcon = false;
             this.TablaUsuarios.Size = new System.Drawing.Size(470, 152);
             this.TablaUsuarios.TabIndex = 17;
+            this.TablaUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaUsuarios_CellContentClick);
             this.TablaUsuarios.Click += new System.EventHandler(this.TablaUsuarios_Click);
             // 
             // textIdPersona

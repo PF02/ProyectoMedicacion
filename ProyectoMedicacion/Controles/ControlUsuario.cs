@@ -24,6 +24,7 @@ namespace ProyectoMedicacion.Controles
             DataTable dt = new DataTable();
             da.Fill(dt);
             grid.DataSource = dt;
+            Data_Persistance.Conexion.CerrarConexion();
         }
 
         public static void LlenarTablaUsuariosEnGestionUsuario(DataGridView grid)
@@ -35,6 +36,7 @@ namespace ProyectoMedicacion.Controles
             DataTable dt = new DataTable();
             da.Fill(dt);
             grid.DataSource = dt;
+             Data_Persistance.Conexion.CerrarConexion(); 
         }
 
         /////////////////////METODOS Y PROCEDIMIENTOS DE BASE DE DATOS////////////////////////////////
@@ -56,6 +58,7 @@ namespace ProyectoMedicacion.Controles
             {
                 throw sqlex;
             }
+            finally { Data_Persistance.Conexion.CerrarConexion(); }
         }
 
         public static void ActualizarUsuarioyContrasena(string idu, string Nomu, string pass, string esta, string idp)
@@ -76,6 +79,7 @@ namespace ProyectoMedicacion.Controles
             {
                 throw sqlex;
             }
+            finally { Data_Persistance.Conexion.CerrarConexion(); }
         }
 
         public static void ActualizarUsuarioSinContrasena(string idu, string Nomu, string esta, string idp)
@@ -95,6 +99,7 @@ namespace ProyectoMedicacion.Controles
             {
                 throw sqlex;
             }
+            finally { Data_Persistance.Conexion.CerrarConexion(); }
         }
 
 

@@ -40,13 +40,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonBuscarComponente = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IdComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Componente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ListaSintomas = new System.Windows.Forms.CheckedListBox();
             this.botonGuardar = new System.Windows.Forms.Button();
+            this.textBoxComponenteAAgregar = new System.Windows.Forms.TextBox();
+            this.buttonAgregarComponenteALista = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -177,25 +179,28 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.buttonAgregarComponenteALista);
+            this.groupBox2.Controls.Add(this.textBoxComponenteAAgregar);
+            this.groupBox2.Controls.Add(this.buttonBuscarComponente);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(461, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(292, 197);
+            this.groupBox2.Size = new System.Drawing.Size(312, 208);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Componentes del Medicamento";
             // 
-            // button1
+            // buttonBuscarComponente
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(202, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Buscar...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonBuscarComponente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarComponente.Location = new System.Drawing.Point(181, 24);
+            this.buttonBuscarComponente.Name = "buttonBuscarComponente";
+            this.buttonBuscarComponente.Size = new System.Drawing.Size(60, 23);
+            this.buttonBuscarComponente.TabIndex = 1;
+            this.buttonBuscarComponente.Text = "Buscar...";
+            this.buttonBuscarComponente.UseVisualStyleBackColor = true;
+            this.buttonBuscarComponente.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -204,7 +209,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdComponente,
             this.Componente});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 61);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(262, 122);
@@ -231,7 +236,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(461, 26);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(292, 161);
+            this.groupBox3.Size = new System.Drawing.Size(312, 161);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sintomas";
@@ -255,13 +260,13 @@
             "Mareos"});
             this.ListaSintomas.Location = new System.Drawing.Point(15, 25);
             this.ListaSintomas.Name = "ListaSintomas";
-            this.ListaSintomas.Size = new System.Drawing.Size(262, 124);
+            this.ListaSintomas.Size = new System.Drawing.Size(276, 124);
             this.ListaSintomas.TabIndex = 0;
             // 
             // botonGuardar
             // 
             this.botonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonGuardar.Location = new System.Drawing.Point(663, 407);
+            this.botonGuardar.Location = new System.Drawing.Point(345, 421);
             this.botonGuardar.Name = "botonGuardar";
             this.botonGuardar.Size = new System.Drawing.Size(90, 53);
             this.botonGuardar.TabIndex = 13;
@@ -269,11 +274,32 @@
             this.botonGuardar.UseVisualStyleBackColor = true;
             this.botonGuardar.Click += new System.EventHandler(this.botonGuardar_Click);
             // 
+            // textBoxComponenteAAgregar
+            // 
+            this.textBoxComponenteAAgregar.Location = new System.Drawing.Point(14, 25);
+            this.textBoxComponenteAAgregar.Name = "textBoxComponenteAAgregar";
+            this.textBoxComponenteAAgregar.ReadOnly = true;
+            this.textBoxComponenteAAgregar.Size = new System.Drawing.Size(161, 22);
+            this.textBoxComponenteAAgregar.TabIndex = 2;
+            this.textBoxComponenteAAgregar.TextChanged += new System.EventHandler(this.textBoxComponenteAAgregar_TextChanged);
+            // 
+            // buttonAgregarComponenteALista
+            // 
+            this.buttonAgregarComponenteALista.Enabled = false;
+            this.buttonAgregarComponenteALista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregarComponenteALista.Location = new System.Drawing.Point(246, 24);
+            this.buttonAgregarComponenteALista.Name = "buttonAgregarComponenteALista";
+            this.buttonAgregarComponenteALista.Size = new System.Drawing.Size(60, 23);
+            this.buttonAgregarComponenteALista.TabIndex = 3;
+            this.buttonAgregarComponenteALista.Text = "Agregar";
+            this.buttonAgregarComponenteALista.UseVisualStyleBackColor = true;
+            this.buttonAgregarComponenteALista.Click += new System.EventHandler(this.buttonAgregarComponenteALista_Click);
+            // 
             // AgregarMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 476);
+            this.ClientSize = new System.Drawing.Size(789, 476);
             this.Controls.Add(this.botonGuardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -284,10 +310,12 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Medicamento";
+            this.Activated += new System.EventHandler(this.AgregarMedicamento_Activated);
             this.Load += new System.EventHandler(this.AgregarMedicamento_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -310,10 +338,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckedListBox ListaSintomas;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonBuscarComponente;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button botonGuardar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdComponente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Componente;
+        private System.Windows.Forms.Button buttonAgregarComponenteALista;
+        private System.Windows.Forms.TextBox textBoxComponenteAAgregar;
     }
 }

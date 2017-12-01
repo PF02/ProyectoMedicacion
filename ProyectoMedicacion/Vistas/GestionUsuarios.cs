@@ -243,5 +243,10 @@ namespace ProyectoMedicacion.Vistas
             Vistas.Home h = new Home();
             h.Activate();
         }
+
+        private void TablaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
