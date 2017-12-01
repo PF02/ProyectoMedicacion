@@ -67,6 +67,7 @@
     <Compile Include="Controles\ControlMedicamento.cs" />
     <Compile Include="Controles\ControlPermiso.cs" />
     <Compile Include="Controles\ControlPersona.cs" />
+    <Compile Include="Controles\ControlSintoma.cs" />
     <Compile Include="Controles\ControlUsuario.cs" />
     <Compile Include="Data Persistance\Conexion.cs" />
     <Compile Include="Vistas\AgregarMedicamento.cs">

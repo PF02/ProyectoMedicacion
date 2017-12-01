@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textNombreMedicamento = new System.Windows.Forms.TextBox();
+            this.TextFechaExpiracion = new System.Windows.Forms.DateTimePicker();
+            this.TextIndicacionesMedicamento = new System.Windows.Forms.RichTextBox();
+            this.TextDosisMedicamento = new System.Windows.Forms.RichTextBox();
+            this.TextContenedorMedicamento = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,55 +53,56 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textNombreMedicamento
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(174, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 0;
+            this.textNombreMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombreMedicamento.Location = new System.Drawing.Point(174, 32);
+            this.textNombreMedicamento.Name = "textNombreMedicamento";
+            this.textNombreMedicamento.Size = new System.Drawing.Size(200, 20);
+            this.textNombreMedicamento.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // TextFechaExpiracion
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(174, 72);
-            this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(128, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.TextFechaExpiracion.CustomFormat = "yyyy-MM-dd";
+            this.TextFechaExpiracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextFechaExpiracion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TextFechaExpiracion.Location = new System.Drawing.Point(174, 72);
+            this.TextFechaExpiracion.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.TextFechaExpiracion.Name = "TextFechaExpiracion";
+            this.TextFechaExpiracion.Size = new System.Drawing.Size(128, 20);
+            this.TextFechaExpiracion.TabIndex = 1;
             // 
-            // richTextBox1
+            // TextIndicacionesMedicamento
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(174, 175);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(200, 79);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.TextIndicacionesMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextIndicacionesMedicamento.Location = new System.Drawing.Point(174, 175);
+            this.TextIndicacionesMedicamento.Name = "TextIndicacionesMedicamento";
+            this.TextIndicacionesMedicamento.Size = new System.Drawing.Size(200, 79);
+            this.TextIndicacionesMedicamento.TabIndex = 2;
+            this.TextIndicacionesMedicamento.Text = "";
             // 
-            // richTextBox2
+            // TextDosisMedicamento
             // 
-            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(174, 281);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(200, 68);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
+            this.TextDosisMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextDosisMedicamento.Location = new System.Drawing.Point(174, 281);
+            this.TextDosisMedicamento.Name = "TextDosisMedicamento";
+            this.TextDosisMedicamento.Size = new System.Drawing.Size(200, 68);
+            this.TextDosisMedicamento.TabIndex = 3;
+            this.TextDosisMedicamento.Text = "";
             // 
-            // comboBox1
+            // TextContenedorMedicamento
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.TextContenedorMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextContenedorMedicamento.FormattingEnabled = true;
+            this.TextContenedorMedicamento.Items.AddRange(new object[] {
             "Frasco",
             "Sobre",
             "Caja"});
-            this.comboBox1.Location = new System.Drawing.Point(174, 122);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.Text = "Frasco";
+            this.TextContenedorMedicamento.Location = new System.Drawing.Point(174, 122);
+            this.TextContenedorMedicamento.Name = "TextContenedorMedicamento";
+            this.TextContenedorMedicamento.Size = new System.Drawing.Size(128, 21);
+            this.TextContenedorMedicamento.TabIndex = 4;
+            this.TextContenedorMedicamento.Text = "Frasco";
             // 
             // label1
             // 
@@ -158,13 +159,13 @@
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.richTextBox2);
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.TextDosisMedicamento);
+            this.groupBox1.Controls.Add(this.TextIndicacionesMedicamento);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.TextFechaExpiracion);
+            this.groupBox1.Controls.Add(this.TextContenedorMedicamento);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textNombreMedicamento);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 26);
@@ -295,11 +296,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textNombreMedicamento;
+        private System.Windows.Forms.DateTimePicker TextFechaExpiracion;
+        private System.Windows.Forms.RichTextBox TextIndicacionesMedicamento;
+        private System.Windows.Forms.RichTextBox TextDosisMedicamento;
+        private System.Windows.Forms.ComboBox TextContenedorMedicamento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
