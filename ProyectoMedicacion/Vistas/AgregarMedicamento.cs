@@ -32,22 +32,20 @@ namespace ProyectoMedicacion.Vistas
             Controles.ControlMedicamento.InsertarMedicamento(textNombreMedicamento.Text, TextFechaExpiracion.Text, TextIndicacionesMedicamento.Text, TextDosisMedicamento.Text, TextContenedorMedicamento.Text);
 
             Controles.ControlSintoma.AgregarSintomasAMedicamento(ListaSintomas, Clases.Medicamento.IdMedicamento);
+
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BuscarComponente(object sender, EventArgs e)
         {
             SubVistas.ComponentesEnAgregarMedicamentos ceam = new SubVistas.ComponentesEnAgregarMedicamentos();
             ceam.Activate();
             ceam.ShowDialog();
         }
 
-        public void AgregarComponenteATabla(string IdCom, string NomCom)
-        {
-            dataGridView1.Rows.Add(IdCom, NomCom);
-        }
-
         private void AgregarMedicamento_Activated(object sender, EventArgs e)
         {
+            //este evento trae el compoente desde el formulario de busqueda hasta este.
             if (Clases.Componente.IdComponente<=0)
             {
                 //que no haga nada
@@ -59,34 +57,6 @@ namespace ProyectoMedicacion.Vistas
             }
             
         }
-
-        public bool VerificarExistenciaDeComponenteAgregados()
-        {
-            bool resultado =false;
-            DataGridView Tablatemp = new DataGridView();
-            Controles.ControlComponente.LlenarTablaComponentes(Tablatemp);
-            int i = -1;
-            foreach (DataGridViewRow componentes in dataGridView1.Rows)
-            {
-                i++;
-                if (componentes.Cells[i].Value.ToString() == Clases.Componente.NombreComponente)
-                {
-                    resultado = true;
-
-                    break;
-                }
-                else
-                {
-
-                    resultado = false;
-                    break;
-                }
-
-            }
-
-            return resultado;
-
-         }
 
         private void buttonAgregarComponenteALista_Click(object sender, EventArgs e)
         {
@@ -130,6 +100,7 @@ namespace ProyectoMedicacion.Vistas
             }
             else
             {
+
                 buttonAgregarComponenteALista.Enabled = true;
                 buttonBuscarComponente.Enabled = false;
             }

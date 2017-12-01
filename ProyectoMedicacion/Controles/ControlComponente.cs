@@ -59,7 +59,19 @@ namespace ProyectoMedicacion.Controles
            
         }
 
+        public static void InsertarComponenteAMedicamento(DataGridView tablacomponentes)
+        {
+            try
+            {
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { Data_Persistance.Conexion.CerrarConexion(); }
+        }
 
 
         public static bool ComprobarExistenciaDeComponente(string nomComponente)
