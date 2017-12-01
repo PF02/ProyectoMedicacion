@@ -45,7 +45,7 @@
             this.IdComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Componente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.ListaSintomas = new System.Windows.Forms.CheckedListBox();
             this.botonGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -227,7 +227,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkedListBox1);
+            this.groupBox3.Controls.Add(this.ListaSintomas);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(461, 26);
             this.groupBox3.Name = "groupBox3";
@@ -236,11 +236,11 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sintomas";
             // 
-            // checkedListBox1
+            // ListaSintomas
             // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.ListaSintomas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListaSintomas.FormattingEnabled = true;
+            this.ListaSintomas.Items.AddRange(new object[] {
             "Agotamiento",
             "Diarrea\t",
             "Dificultad Respiratoria",
@@ -253,10 +253,10 @@
             "Tos",
             "Picor",
             "Mareos"});
-            this.checkedListBox1.Location = new System.Drawing.Point(15, 25);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(262, 124);
-            this.checkedListBox1.TabIndex = 0;
+            this.ListaSintomas.Location = new System.Drawing.Point(15, 25);
+            this.ListaSintomas.Name = "ListaSintomas";
+            this.ListaSintomas.Size = new System.Drawing.Size(262, 124);
+            this.ListaSintomas.TabIndex = 0;
             // 
             // botonGuardar
             // 
@@ -309,7 +309,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox ListaSintomas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button botonGuardar;

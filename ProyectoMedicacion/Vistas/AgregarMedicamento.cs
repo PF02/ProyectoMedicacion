@@ -30,6 +30,8 @@ namespace ProyectoMedicacion.Vistas
         private void botonGuardar_Click(object sender, EventArgs e)
         {
             Controles.ControlMedicamento.InsertarMedicamento(textNombreMedicamento.Text, TextFechaExpiracion.Text, TextIndicacionesMedicamento.Text, TextDosisMedicamento.Text, TextContenedorMedicamento.Text);
+
+            Controles.ControlSintoma.AgregarSintomasAMedicamento(ListaSintomas, Clases.Medicamento.IdMedicamento);
         }
     }
 }

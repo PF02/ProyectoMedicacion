@@ -84,6 +84,7 @@ namespace ProyectoMedicacion.Controles
 
                 SqlCommand cm = new SqlCommand("", Data_Persistance.Conexion.conn);
 
+
                 for (int i = 1; i < checklistaPermisos.Items.Count+1; i++)
                 {
                     if (checklistaPermisos.GetItemChecked(i-1) == true)
