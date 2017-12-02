@@ -31,10 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonLimpiarPersona = new System.Windows.Forms.Button();
             this.buttonBuscarPersona = new System.Windows.Forms.Button();
             this.textBoxNombrePersona = new System.Windows.Forms.TextBox();
             this.textIdPersona = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonLimpiarComponente = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxNombreComponente = new System.Windows.Forms.TextBox();
             this.textBoxIdComponente = new System.Windows.Forms.TextBox();
@@ -45,10 +47,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.TablaAlergiasPersona = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.buttonLimpiarPersona = new System.Windows.Forms.Button();
-            this.buttonLimpiarComponente = new System.Windows.Forms.Button();
+            this.buttonAgregarComponente = new System.Windows.Forms.Button();
+            this.buttonEliminarComponenteAlergico = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -88,6 +88,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Persona";
+            // 
+            // buttonLimpiarPersona
+            // 
+            this.buttonLimpiarPersona.Location = new System.Drawing.Point(203, 67);
+            this.buttonLimpiarPersona.Name = "buttonLimpiarPersona";
+            this.buttonLimpiarPersona.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpiarPersona.TabIndex = 9;
+            this.buttonLimpiarPersona.Text = "Limpiar";
+            this.buttonLimpiarPersona.UseVisualStyleBackColor = true;
+            this.buttonLimpiarPersona.Click += new System.EventHandler(this.buttonLimpiarPersona_Click);
             // 
             // buttonBuscarPersona
             // 
@@ -130,6 +140,16 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Componente";
+            // 
+            // buttonLimpiarComponente
+            // 
+            this.buttonLimpiarComponente.Location = new System.Drawing.Point(214, 67);
+            this.buttonLimpiarComponente.Name = "buttonLimpiarComponente";
+            this.buttonLimpiarComponente.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpiarComponente.TabIndex = 10;
+            this.buttonLimpiarComponente.Text = "Limpiar";
+            this.buttonLimpiarComponente.UseVisualStyleBackColor = true;
+            this.buttonLimpiarComponente.Click += new System.EventHandler(this.buttonLimpiarComponente_Click);
             // 
             // button1
             // 
@@ -224,8 +244,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.buttonAgregarComponente);
+            this.groupBox4.Controls.Add(this.buttonEliminarComponenteAlergico);
             this.groupBox4.Location = new System.Drawing.Point(330, 134);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(153, 167);
@@ -233,41 +253,25 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Acciones";
             // 
-            // button5
+            // buttonAgregarComponente
             // 
-            this.button5.Location = new System.Drawing.Point(14, 26);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(122, 50);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Agregar Componente Alérgico";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonAgregarComponente.Location = new System.Drawing.Point(14, 26);
+            this.buttonAgregarComponente.Name = "buttonAgregarComponente";
+            this.buttonAgregarComponente.Size = new System.Drawing.Size(122, 50);
+            this.buttonAgregarComponente.TabIndex = 2;
+            this.buttonAgregarComponente.Text = "Agregar Componente Alérgico";
+            this.buttonAgregarComponente.UseVisualStyleBackColor = true;
+            this.buttonAgregarComponente.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button2
+            // buttonEliminarComponenteAlergico
             // 
-            this.button2.Location = new System.Drawing.Point(14, 95);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 46);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Eliminar Componente Alérgico";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // buttonLimpiarPersona
-            // 
-            this.buttonLimpiarPersona.Location = new System.Drawing.Point(203, 67);
-            this.buttonLimpiarPersona.Name = "buttonLimpiarPersona";
-            this.buttonLimpiarPersona.Size = new System.Drawing.Size(75, 23);
-            this.buttonLimpiarPersona.TabIndex = 9;
-            this.buttonLimpiarPersona.Text = "Limpiar";
-            this.buttonLimpiarPersona.UseVisualStyleBackColor = true;
-            // 
-            // buttonLimpiarComponente
-            // 
-            this.buttonLimpiarComponente.Location = new System.Drawing.Point(214, 67);
-            this.buttonLimpiarComponente.Name = "buttonLimpiarComponente";
-            this.buttonLimpiarComponente.Size = new System.Drawing.Size(75, 23);
-            this.buttonLimpiarComponente.TabIndex = 10;
-            this.buttonLimpiarComponente.Text = "Limpiar";
-            this.buttonLimpiarComponente.UseVisualStyleBackColor = true;
+            this.buttonEliminarComponenteAlergico.Location = new System.Drawing.Point(14, 95);
+            this.buttonEliminarComponenteAlergico.Name = "buttonEliminarComponenteAlergico";
+            this.buttonEliminarComponenteAlergico.Size = new System.Drawing.Size(122, 46);
+            this.buttonEliminarComponenteAlergico.TabIndex = 0;
+            this.buttonEliminarComponenteAlergico.Text = "Eliminar Componente Alérgico";
+            this.buttonEliminarComponenteAlergico.UseVisualStyleBackColor = true;
+            this.buttonEliminarComponenteAlergico.Click += new System.EventHandler(this.buttonEliminarComponenteAlergico_Click);
             // 
             // AlergiasPersonas
             // 
@@ -315,11 +319,11 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView TablaAlergiasPersona;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonEliminarComponenteAlergico;
         private System.Windows.Forms.Button buttonBuscarPersona;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonAgregarComponente;
         private System.Windows.Forms.Button buttonLimpiarPersona;
         private System.Windows.Forms.Button buttonLimpiarComponente;
     }

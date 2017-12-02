@@ -27,5 +27,77 @@ namespace ProyectoMedicacion.Controles
             Data_Persistance.Conexion.CerrarConexion();
 
         }
+
+        public static bool ComprobarExistenciaDeAlergia(string idcomponente, string idpersona)
+        {
+            try
+            {
+                SqlCommand ComandoSQL = new SqlCommand("SELECT COUNT(*)FROM Alergia WHERE Id_Componente ='" + idcomponente+ "' AND Id_Persona = '"+idpersona+"';", Data_Persistance.Conexion.conn);
+
+                Data_Persistance.Conexion.CerrarConexion();
+                Data_Persistance.Conexion.AbrirConexion();
+
+                var resultado = ComandoSQL.ExecuteScalar();
+                int i = Convert.ToInt32(resultado);
+
+                if (i == 0)
+                {
+                    Data_Persistance.Conexion.CerrarConexion();
+                    return false;
+
+                }
+                else
+                {
+                    Data_Persistance.Conexion.CerrarConexion();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
+        public static void GuardarAlergia(string idpersona, string idcomponente)
+        {
+            try
+            {
+                ProyectoMedicacion.Data_Persistance.Conexion.ejecutaProcedure("Insertar_Alergia",
+               new List<System.Data.SqlClient.SqlParameter>(){
+               new System.Data.SqlClient.SqlParameter("@Id_Persona",idpersona),
+               new System.Data.SqlClient.SqlParameter("@Id_Componente",idcomponente)
+               
+
+          });
+            }
+            catch (System.Data.SqlClient.SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally { Data_Persistance.Conexion.CerrarConexion(); }
+        }
+
+        public static void EliminarAlergia(string idpersona, string idcomponente)
+        {
+            try
+            {
+                ProyectoMedicacion.Data_Persistance.Conexion.ejecutaProcedure("EliminarAlergia",
+               new List<System.Data.SqlClient.SqlParameter>(){
+               new System.Data.SqlClient.SqlParameter("@IdPersona",idpersona),
+               new System.Data.SqlClient.SqlParameter("@IdComponente",idcomponente)
+
+
+          });
+            }
+            catch (System.Data.SqlClient.SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally { Data_Persistance.Conexion.CerrarConexion(); }
+
+        }
     }
 }
