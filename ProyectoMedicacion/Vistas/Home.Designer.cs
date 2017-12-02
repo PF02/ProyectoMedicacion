@@ -39,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelP = new System.Windows.Forms.Panel();
             this.panelMedicamentosComposicion = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -183,7 +182,6 @@
             // panelMedicamentosComposicion
             // 
             this.panelMedicamentosComposicion.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panelMedicamentosComposicion.Controls.Add(this.button2);
             this.panelMedicamentosComposicion.Controls.Add(this.button6);
             this.panelMedicamentosComposicion.Enabled = false;
             this.panelMedicamentosComposicion.Location = new System.Drawing.Point(356, 442);
@@ -191,22 +189,13 @@
             this.panelMedicamentosComposicion.Size = new System.Drawing.Size(244, 309);
             this.panelMedicamentosComposicion.TabIndex = 5;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(54, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 73);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Gestión Componentes";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(54, 13);
+            this.button6.Location = new System.Drawing.Point(54, 27);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(127, 73);
             this.button6.TabIndex = 3;
-            this.button6.Text = "Agregar Medicamento";
+            this.button6.Text = "Agregar Medicamento y Composición";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -243,7 +232,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(27, 88);
+            this.button10.Location = new System.Drawing.Point(27, 13);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(127, 73);
             this.button10.TabIndex = 4;
@@ -252,7 +241,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(27, 9);
+            this.button11.Location = new System.Drawing.Point(27, 102);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(127, 73);
             this.button11.TabIndex = 2;
@@ -511,6 +500,5 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
     }
 }

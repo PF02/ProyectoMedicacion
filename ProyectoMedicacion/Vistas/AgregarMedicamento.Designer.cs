@@ -49,10 +49,16 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ListaSintomas = new System.Windows.Forms.CheckedListBox();
             this.botonGuardar = new System.Windows.Forms.Button();
+            this.buttonEliminarComponente = new System.Windows.Forms.Button();
+            this.buttonLimpiarCampos = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonDeseleccionarChecks = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // textNombreMedicamento
@@ -172,21 +178,23 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(413, 373);
+            this.groupBox1.Size = new System.Drawing.Size(413, 381);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Medicamento";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.buttonEliminarComponente);
             this.groupBox2.Controls.Add(this.buttonAgregarComponenteALista);
             this.groupBox2.Controls.Add(this.textBoxComponenteAAgregar);
             this.groupBox2.Controls.Add(this.buttonBuscarComponente);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(461, 197);
+            this.groupBox2.Location = new System.Drawing.Point(464, 255);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 202);
+            this.groupBox2.Size = new System.Drawing.Size(312, 213);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Componentes del Medicamento";
@@ -211,6 +219,7 @@
             this.textBoxComponenteAAgregar.Size = new System.Drawing.Size(161, 22);
             this.textBoxComponenteAAgregar.TabIndex = 2;
             this.textBoxComponenteAAgregar.TextChanged += new System.EventHandler(this.textBoxComponenteAAgregar_TextChanged);
+            this.textBoxComponenteAAgregar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBoxComponenteAAgregar_MouseDoubleClick);
             // 
             // buttonBuscarComponente
             // 
@@ -226,13 +235,19 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdComponente,
             this.Componente});
             this.dataGridView1.Location = new System.Drawing.Point(27, 61);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.ShowCellErrors = false;
+            this.dataGridView1.ShowCellToolTips = false;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.ShowRowErrors = false;
             this.dataGridView1.Size = new System.Drawing.Size(262, 122);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -253,11 +268,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonDeseleccionarChecks);
             this.groupBox3.Controls.Add(this.ListaSintomas);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(461, 26);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(312, 161);
+            this.groupBox3.Size = new System.Drawing.Size(312, 212);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sintomas";
@@ -278,8 +294,12 @@
             "Ganas de Orinar",
             "Tos",
             "Picor",
-            "Mareos"});
-            this.ListaSintomas.Location = new System.Drawing.Point(15, 25);
+            "Mareos",
+            "Náuseas",
+            "Gripe",
+            "Presión Alta",
+            "Presión Baja"});
+            this.ListaSintomas.Location = new System.Drawing.Point(18, 48);
             this.ListaSintomas.Name = "ListaSintomas";
             this.ListaSintomas.Size = new System.Drawing.Size(276, 124);
             this.ListaSintomas.TabIndex = 0;
@@ -287,20 +307,75 @@
             // botonGuardar
             // 
             this.botonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonGuardar.Location = new System.Drawing.Point(368, 405);
+            this.botonGuardar.Location = new System.Drawing.Point(130, 16);
             this.botonGuardar.Name = "botonGuardar";
             this.botonGuardar.Size = new System.Drawing.Size(90, 53);
             this.botonGuardar.TabIndex = 13;
-            this.botonGuardar.Text = "Guardar";
+            this.botonGuardar.Text = "Guardar Medicamento";
             this.botonGuardar.UseVisualStyleBackColor = true;
             this.botonGuardar.Click += new System.EventHandler(this.botonGuardar_Click);
+            // 
+            // buttonEliminarComponente
+            // 
+            this.buttonEliminarComponente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminarComponente.Location = new System.Drawing.Point(165, 186);
+            this.buttonEliminarComponente.Name = "buttonEliminarComponente";
+            this.buttonEliminarComponente.Size = new System.Drawing.Size(123, 23);
+            this.buttonEliminarComponente.TabIndex = 14;
+            this.buttonEliminarComponente.Text = "Eliminar Componente";
+            this.buttonEliminarComponente.UseVisualStyleBackColor = true;
+            this.buttonEliminarComponente.Click += new System.EventHandler(this.buttonEliminarComponente_Click);
+            // 
+            // buttonLimpiarCampos
+            // 
+            this.buttonLimpiarCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpiarCampos.Location = new System.Drawing.Point(34, 16);
+            this.buttonLimpiarCampos.Name = "buttonLimpiarCampos";
+            this.buttonLimpiarCampos.Size = new System.Drawing.Size(90, 53);
+            this.buttonLimpiarCampos.TabIndex = 14;
+            this.buttonLimpiarCampos.Text = "Limpiar Campos";
+            this.buttonLimpiarCampos.UseVisualStyleBackColor = true;
+            this.buttonLimpiarCampos.Click += new System.EventHandler(this.buttonLimpiarCampos_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(26, 186);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Eliminar Todo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.buttonLimpiarCampos);
+            this.groupBox4.Controls.Add(this.botonGuardar);
+            this.groupBox4.Location = new System.Drawing.Point(108, 415);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(241, 83);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Acciones Generales";
+            // 
+            // buttonDeseleccionarChecks
+            // 
+            this.buttonDeseleccionarChecks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeseleccionarChecks.Location = new System.Drawing.Point(171, 178);
+            this.buttonDeseleccionarChecks.Name = "buttonDeseleccionarChecks";
+            this.buttonDeseleccionarChecks.Size = new System.Drawing.Size(123, 23);
+            this.buttonDeseleccionarChecks.TabIndex = 15;
+            this.buttonDeseleccionarChecks.Text = "Deseleccionar todos";
+            this.buttonDeseleccionarChecks.UseVisualStyleBackColor = true;
+            this.buttonDeseleccionarChecks.Click += new System.EventHandler(this.buttonDeseleccionarChecks_Click);
             // 
             // AgregarMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 464);
-            this.Controls.Add(this.botonGuardar);
+            this.ClientSize = new System.Drawing.Size(789, 515);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -318,6 +393,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -345,5 +421,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Componente;
         private System.Windows.Forms.Button buttonAgregarComponenteALista;
         private System.Windows.Forms.TextBox textBoxComponenteAAgregar;
+        private System.Windows.Forms.Button buttonEliminarComponente;
+        private System.Windows.Forms.Button buttonLimpiarCampos;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonDeseleccionarChecks;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

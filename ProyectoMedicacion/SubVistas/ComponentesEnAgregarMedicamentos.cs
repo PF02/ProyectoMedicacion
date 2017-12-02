@@ -51,5 +51,13 @@ namespace ProyectoMedicacion.SubVistas
             Vistas.AgregarMedicamento am = new Vistas.AgregarMedicamento();
             am.Activate();
         }
+
+        private void textBoxFiltrarBusqueda_TextChanged(object sender, EventArgs e)
+        {
+           
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Componentes LIKE '{0}%' OR Componentes LIKE '% {0}%'", textBoxFiltrarBusqueda.Text);
+                       
+
+        }
     }
 }

@@ -29,11 +29,61 @@ namespace ProyectoMedicacion.Vistas
 
         private void botonGuardar_Click(object sender, EventArgs e)
         {
-            Controles.ControlMedicamento.InsertarMedicamento(textNombreMedicamento.Text, TextFechaExpiracion.Text, TextIndicacionesMedicamento.Text, TextDosisMedicamento.Text, TextContenedorMedicamento.Text);
+            if (textNombreMedicamento.Text =="" || TextIndicacionesMedicamento.Text =="" || TextDosisMedicamento.Text =="" )
+            {
+                MessageBox.Show("Por favor complete los datos del Medicamento.", "Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (ListaSintomas.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Necesita seleccionar almenos un sintoma para el Medicamento.", "Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            Controles.ControlSintoma.AgregarSintomasAMedicamento(ListaSintomas, Clases.Medicamento.IdMedicamento);
+            else if (dataGridView1.RowCount <=0)
+            {
+                MessageBox.Show("Necesita agregar almenos un componente para el Medicamento.", "Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            else
+            {
+
+                DialogResult dialogResult = MessageBox.Show("¿Esta seguro guardar este Medicamento?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Controles.ControlMedicamento.InsertarMedicamento(textNombreMedicamento.Text, TextFechaExpiracion.Text, TextIndicacionesMedicamento.Text, TextDosisMedicamento.Text, TextContenedorMedicamento.Text);
+
+                    Controles.ControlSintoma.AgregarSintomasAMedicamento(ListaSintomas, Clases.Medicamento.IdMedicamento);
+
+                    Controles.ControlComponente.InsertarComponenteAMedicamento(dataGridView1, Clases.Medicamento.IdMedicamento.ToString());
+
+                    MessageBox.Show("El proceso se completó satisfactoriamente.", "Medicamento Almacenado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiarcampos();
+                }
+
+                else if (dialogResult == DialogResult.No)
+                {
+                    //no hace nada
+                }
+                
+            }
+
+           
+        }
 
 
+        public void limpiarcampos()
+        {
+            textNombreMedicamento.Clear();
+            TextDosisMedicamento.Clear();
+            TextIndicacionesMedicamento.Clear();
+            while (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.Rows.RemoveAt(0);
+            }
+            for (int i = 0; i < ListaSintomas.Items.Count; i++)
+            {
+                ListaSintomas.SetItemChecked(i, false);
+            }
         }
 
         private void BuscarComponente(object sender, EventArgs e)
@@ -54,6 +104,11 @@ namespace ProyectoMedicacion.Vistas
             else
             {
                 textBoxComponenteAAgregar.Text = Clases.Componente.NombreComponente;
+            }
+            if (textBoxComponenteAAgregar.Text == "")
+            {
+                buttonAgregarComponenteALista.Enabled = false;
+                buttonBuscarComponente.Enabled = true;
             }
             
         }
@@ -104,6 +159,95 @@ namespace ProyectoMedicacion.Vistas
                 buttonAgregarComponenteALista.Enabled = true;
                 buttonBuscarComponente.Enabled = false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dataGridView1.RowCount.ToString());
+        }
+
+        private void buttonEliminarComponente_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount >0)
+            {
+
+                DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar este componente?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
+                    {
+                        if (oneCell.Selected)
+                            dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
+                        
+                    }
+                    Clases.Componente.NombreComponente = "";
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    textBoxComponenteAAgregar.Clear();//do something else
+                    Clases.Componente.NombreComponente = "";
+                }
+            }
+                                  
+        }
+
+        private void textBoxComponenteAAgregar_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBoxComponenteAAgregar.Clear();
+        }
+
+        private void buttonLimpiarCampos_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea limpiar todos los campos?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+               limpiarcampos();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar todos los componentes agregados?", "Alerta", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                while (dataGridView1.Rows.Count > 0)
+                {
+                    dataGridView1.Rows.RemoveAt(0);
+                }
+
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
+        }
+
+        private void buttonDeseleccionarChecks_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea deseleccionar todos sintomas?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                for (int i = 0; i < ListaSintomas.Items.Count; i++)
+                {
+                    ListaSintomas.SetItemChecked(i, false);
+                }
+
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
+
+            
         }
     }
     }

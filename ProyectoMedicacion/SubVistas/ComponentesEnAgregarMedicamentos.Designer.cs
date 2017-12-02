@@ -36,7 +36,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonSeleccionarComponente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxFiltrarBusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -105,14 +105,14 @@
             // 
             this.groupBox2.Controls.Add(this.buttonSeleccionarComponente);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBoxFiltrarBusqueda);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(12, 137);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(327, 245);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Componentes Existente";
+            this.groupBox2.Text = "Componentes Existentes";
             // 
             // buttonSeleccionarComponente
             // 
@@ -133,12 +133,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Filtrar Busqueda";
             // 
-            // textBox1
+            // textBoxFiltrarBusqueda
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBoxFiltrarBusqueda.Location = new System.Drawing.Point(122, 27);
+            this.textBoxFiltrarBusqueda.Name = "textBoxFiltrarBusqueda";
+            this.textBoxFiltrarBusqueda.Size = new System.Drawing.Size(166, 20);
+            this.textBoxFiltrarBusqueda.TabIndex = 2;
+            this.textBoxFiltrarBusqueda.TextChanged += new System.EventHandler(this.textBoxFiltrarBusqueda_TextChanged);
             // 
             // ComponentesEnAgregarMedicamentos
             // 
@@ -176,6 +177,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonSeleccionarComponente;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxFiltrarBusqueda;
     }
 }

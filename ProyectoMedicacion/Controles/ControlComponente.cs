@@ -13,7 +13,7 @@ namespace ProyectoMedicacion.Controles
     {
         public static void LlenarTablaComponentes(DataGridView tablaComponente)
         {
-            string cmd = "SELECT  Id_Componente AS 'Id', Componente AS 'Componentes Existentes' FROM Componente;";
+            string cmd = "SELECT  Id_Componente AS 'Id', Componente AS 'Componentes' FROM Componente;";
             SqlCommand cm = new SqlCommand(cmd, Data_Persistance.Conexion.conn);
             SqlDataAdapter da = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
@@ -59,10 +59,23 @@ namespace ProyectoMedicacion.Controles
            
         }
 
-        public static void InsertarComponenteAMedicamento(DataGridView tablacomponentes)
+        public static void InsertarComponenteAMedicamento(DataGridView tablacomponentes, string IdMedi)
         {
             try
             {
+                Data_Persistance.Conexion.CerrarConexion();
+                Data_Persistance.Conexion.AbrirConexion();
+                
+
+                for (int i = 0; i < tablacomponentes.RowCount; i++)
+                {
+                string cmd = "INSERT INTO Composicion_Medicamento VALUES" +
+                        "("+IdMedi+", "+tablacomponentes.Rows[i].Cells["IdComponente"].Value.ToString()+");";
+
+                 SqlCommand comn = new SqlCommand(cmd,Data_Persistance.Conexion.conn);
+                    comn.ExecuteNonQuery();
+
+                }
 
             }
             catch (Exception)
