@@ -164,5 +164,12 @@ namespace ProyectoMedicacion.Vistas
             Vistas.AgregarMedicamento am = new AgregarMedicamento();
             am.ShowDialog();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            Vistas.AlergiasPersonas ap = new AlergiasPersonas();
+            ap.Show();
+        }
     }
 }

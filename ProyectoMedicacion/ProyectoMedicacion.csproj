@@ -60,11 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Alergia.cs" />
     <Compile Include="Clases\Componente.cs" />
     <Compile Include="Clases\Medicamento.cs" />
     <Compile Include="Clases\Persona.cs" />
     <Compile Include="Clases\Sintoma.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controles\ControlAlergia.cs" />
     <Compile Include="Controles\ControlComponente.cs" />
     <Compile Include="Controles\ControlMedicamento.cs" />
     <Compile Include="Controles\ControlPermiso.cs" />
@@ -77,6 +79,12 @@
     </Compile>
     <Compile Include="SubVistas\ComponentesEnAgregarMedicamentos.Designer.cs">
       <DependentUpon>ComponentesEnAgregarMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubVistas\PersonasEnAlergias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVistas\PersonasEnAlergias.Designer.cs">
+      <DependentUpon>PersonasEnAlergias.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\AgregarMedicamento.cs">
       <SubType>Form</SubType>
@@ -95,6 +103,12 @@
     </Compile>
     <Compile Include="Vistas\AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AlergiasPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AlergiasPersonas.Designer.cs">
+      <DependentUpon>AlergiasPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\GestionPersonas.cs">
       <SubType>Form</SubType>
@@ -125,6 +139,9 @@
     <EmbeddedResource Include="SubVistas\ComponentesEnAgregarMedicamentos.resx">
       <DependentUpon>ComponentesEnAgregarMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubVistas\PersonasEnAlergias.resx">
+      <DependentUpon>PersonasEnAlergias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AgregarMedicamento.resx">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\AlergiasPersonas.resx">
+      <DependentUpon>AlergiasPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>

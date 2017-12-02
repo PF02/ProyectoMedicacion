@@ -249,6 +249,11 @@ namespace ProyectoMedicacion.Vistas
 
             
         }
+
+        private void AgregarMedicamento_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Clases.Componente.IdComponente = 0;
+        }
     }
     }
 

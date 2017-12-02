@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEliminarComponente = new System.Windows.Forms.Button();
             this.buttonAgregarComponenteALista = new System.Windows.Forms.Button();
             this.textBoxComponenteAAgregar = new System.Windows.Forms.TextBox();
             this.buttonBuscarComponente = new System.Windows.Forms.Button();
@@ -47,13 +49,11 @@
             this.IdComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Componente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonDeseleccionarChecks = new System.Windows.Forms.Button();
             this.ListaSintomas = new System.Windows.Forms.CheckedListBox();
             this.botonGuardar = new System.Windows.Forms.Button();
-            this.buttonEliminarComponente = new System.Windows.Forms.Button();
             this.buttonLimpiarCampos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.buttonDeseleccionarChecks = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -199,6 +199,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Componentes del Medicamento";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(26, 186);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Eliminar Todo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // buttonEliminarComponente
+            // 
+            this.buttonEliminarComponente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminarComponente.Location = new System.Drawing.Point(165, 186);
+            this.buttonEliminarComponente.Name = "buttonEliminarComponente";
+            this.buttonEliminarComponente.Size = new System.Drawing.Size(123, 23);
+            this.buttonEliminarComponente.TabIndex = 14;
+            this.buttonEliminarComponente.Text = "Eliminar Componente";
+            this.buttonEliminarComponente.UseVisualStyleBackColor = true;
+            this.buttonEliminarComponente.Click += new System.EventHandler(this.buttonEliminarComponente_Click);
+            // 
             // buttonAgregarComponenteALista
             // 
             this.buttonAgregarComponenteALista.Enabled = false;
@@ -278,6 +300,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sintomas";
             // 
+            // buttonDeseleccionarChecks
+            // 
+            this.buttonDeseleccionarChecks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeseleccionarChecks.Location = new System.Drawing.Point(171, 178);
+            this.buttonDeseleccionarChecks.Name = "buttonDeseleccionarChecks";
+            this.buttonDeseleccionarChecks.Size = new System.Drawing.Size(123, 23);
+            this.buttonDeseleccionarChecks.TabIndex = 15;
+            this.buttonDeseleccionarChecks.Text = "Deseleccionar todos";
+            this.buttonDeseleccionarChecks.UseVisualStyleBackColor = true;
+            this.buttonDeseleccionarChecks.Click += new System.EventHandler(this.buttonDeseleccionarChecks_Click);
+            // 
             // ListaSintomas
             // 
             this.ListaSintomas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -315,17 +348,6 @@
             this.botonGuardar.UseVisualStyleBackColor = true;
             this.botonGuardar.Click += new System.EventHandler(this.botonGuardar_Click);
             // 
-            // buttonEliminarComponente
-            // 
-            this.buttonEliminarComponente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarComponente.Location = new System.Drawing.Point(165, 186);
-            this.buttonEliminarComponente.Name = "buttonEliminarComponente";
-            this.buttonEliminarComponente.Size = new System.Drawing.Size(123, 23);
-            this.buttonEliminarComponente.TabIndex = 14;
-            this.buttonEliminarComponente.Text = "Eliminar Componente";
-            this.buttonEliminarComponente.UseVisualStyleBackColor = true;
-            this.buttonEliminarComponente.Click += new System.EventHandler(this.buttonEliminarComponente_Click);
-            // 
             // buttonLimpiarCampos
             // 
             this.buttonLimpiarCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -337,17 +359,6 @@
             this.buttonLimpiarCampos.UseVisualStyleBackColor = true;
             this.buttonLimpiarCampos.Click += new System.EventHandler(this.buttonLimpiarCampos_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(26, 186);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Eliminar Todo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.buttonLimpiarCampos);
@@ -358,17 +369,6 @@
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Acciones Generales";
-            // 
-            // buttonDeseleccionarChecks
-            // 
-            this.buttonDeseleccionarChecks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeseleccionarChecks.Location = new System.Drawing.Point(171, 178);
-            this.buttonDeseleccionarChecks.Name = "buttonDeseleccionarChecks";
-            this.buttonDeseleccionarChecks.Size = new System.Drawing.Size(123, 23);
-            this.buttonDeseleccionarChecks.TabIndex = 15;
-            this.buttonDeseleccionarChecks.Text = "Deseleccionar todos";
-            this.buttonDeseleccionarChecks.UseVisualStyleBackColor = true;
-            this.buttonDeseleccionarChecks.Click += new System.EventHandler(this.buttonDeseleccionarChecks_Click);
             // 
             // AgregarMedicamento
             // 
@@ -386,6 +386,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Medicamento";
             this.Activated += new System.EventHandler(this.AgregarMedicamento_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AgregarMedicamento_FormClosed);
             this.Load += new System.EventHandler(this.AgregarMedicamento_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
