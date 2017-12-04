@@ -58,6 +58,7 @@ namespace ProyectoMedicacion.Vistas
 
                     MessageBox.Show("El proceso se completó satisfactoriamente.", "Medicamento Almacenado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiarcampos();
+                    textBoxComponenteAAgregar.Clear();
                 }
 
                 else if (dialogResult == DialogResult.No)

@@ -171,5 +171,11 @@ namespace ProyectoMedicacion.Vistas
             Vistas.AlergiasPersonas ap = new AlergiasPersonas();
             ap.Show();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Vistas.ConsultaMedica cm = new Vistas.ConsultaMedica();
+            cm.ShowDialog();
+        }
     }
 }

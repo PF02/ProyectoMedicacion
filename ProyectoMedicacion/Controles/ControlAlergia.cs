@@ -28,6 +28,21 @@ namespace ProyectoMedicacion.Controles
 
         }
 
+        public static void LlenarTablaTodasLasAlergiasDeUnaPersona(DataGridView Tabla, string IdPersona)
+        {
+            Data_Persistance.Conexion.CerrarConexion();
+            Data_Persistance.Conexion.AbrirConexion();
+
+            string cmd = "SELECT Componente.Id_Componente, Componente FROM Componente JOIN Alergia ON Alergia.Id_Componente = Componente.Id_Componente JOIN Persona ON Alergia.Id_Persona = Persona.Id_Persona WHERE Persona.Id_Persona= " + IdPersona + ";";
+            SqlCommand cm = new SqlCommand(cmd, Data_Persistance.Conexion.conn);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            Tabla.DataSource = dt;
+            Data_Persistance.Conexion.CerrarConexion();
+        }
+
         public static bool ComprobarExistenciaDeAlergia(string idcomponente, string idpersona)
         {
             try

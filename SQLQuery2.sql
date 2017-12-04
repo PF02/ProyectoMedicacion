@@ -1,12 +1,1 @@
-﻿USE [C:\PROYECTOMEDICACION\PROYECTOMEDICACION\MEDICACION.MDF]
-GO
-
-DECLARE	@return_value Int
-
-EXEC	@return_value = [dbo].[EliminarAlergia]
-		@IdPersona = 2,
-		@IdComponente = 4
-
-SELECT	@return_value as 'Return Value'
-
-GO
+﻿SELECT Componente.Id_Componente, Componente FROM Componente JOIN Alergia ON Alergia.Id_Componente = Componente.Id_Componente JOIN Persona ON Alergia.Id_Persona = Persona.Id_Persona WHERE Persona.Id_Persona =2; 

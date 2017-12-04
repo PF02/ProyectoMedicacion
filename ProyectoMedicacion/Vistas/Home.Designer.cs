@@ -191,7 +191,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(54, 27);
+            this.button6.Location = new System.Drawing.Point(54, 13);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(127, 73);
             this.button6.TabIndex = 3;
@@ -246,8 +246,9 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(127, 73);
             this.button11.TabIndex = 2;
-            this.button11.Text = "Realizar Consulta";
+            this.button11.Text = "Realizar Consulta Médica";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label4
             // 
