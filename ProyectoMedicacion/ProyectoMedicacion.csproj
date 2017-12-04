@@ -126,6 +126,12 @@
     <Compile Include="Vistas\GestionPersonas.Designer.cs">
       <DependentUpon>GestionPersonas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\GestionProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\GestionProveedores.Designer.cs">
+      <DependentUpon>GestionProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\GestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
