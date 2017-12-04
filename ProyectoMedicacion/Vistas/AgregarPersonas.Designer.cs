@@ -182,16 +182,15 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 220);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Nombre";
+            this.label6.Text = "Cédula";
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(96, 217);
             this.maskedTextBox1.Mask = "000-0000000-0";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PromptChar = ' ';
             this.maskedTextBox1.Size = new System.Drawing.Size(121, 20);
             this.maskedTextBox1.TabIndex = 15;
             // 
@@ -201,7 +200,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(278, 354);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AgregarPersonas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarPersonas";
             this.Load += new System.EventHandler(this.AgregarPersonas_Load);
             this.groupBox1.ResumeLayout(false);
