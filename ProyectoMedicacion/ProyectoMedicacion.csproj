@@ -167,6 +167,9 @@
     <EmbeddedResource Include="Vistas\ConsultaMedica.resx">
       <DependentUpon>ConsultaMedica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\GestionPersonas.resx">
+      <DependentUpon>GestionPersonas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
